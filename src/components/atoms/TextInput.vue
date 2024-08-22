@@ -26,9 +26,12 @@ function validateInput (inputText) {
 
 <style scoped>
 .input-base {
-  width: 300px;
-  height: 30px;
+  width: 500px;
+  height: 25px;
   border-radius: 7px;
+  border-width: 10px;
+  border-color: white;
+  border-style: solid;
 }
 
 .input-invalid {
