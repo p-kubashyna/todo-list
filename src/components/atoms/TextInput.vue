@@ -1,0 +1,38 @@
+<script setup>
+import { ref } from 'vue'
+import store from '@/store'
+
+const inputText = ref('')
+const isInvalidInput = ref(false)
+
+function submitTodo (inputText) {
+  this.isInvalidInput = validateInput(this.inputText)
+  if (!this.isInvalidInput) {
+    store.commit('setTodo', inputText)
+    this.inputText = ''
+  }
+}
+
+function validateInput (inputText) {
+  return (!inputText || /^\s*$/.test(inputText) || inputText.length > 150)
+}
+</script>
+
+<template>
+<form @submit.prevent="submitTodo(inputText)">
+    <input :class="{ 'input-invalid input-base' : isInvalidInput === true, 'input-base' : isInvalidInput === false}" v-model.trim="inputText" placeholder="Add task..."/>
+</form>
+</template>
+
+<style scoped>
+.input-base {
+  width: 300px;
+  height: 30px;
+  border-radius: 7px;
+}
+
+.input-invalid {
+  background: white url(../../assets/images/invalid_input_icon.png) no-repeat right;
+  background-size: auto 100%;
+}
+</style>
