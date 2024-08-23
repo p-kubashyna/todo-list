@@ -6,9 +6,8 @@ import TodoMainComponent from '../../components/templates/TodoMainComponent.vue'
 <template>
   <BackgroundImage/>
   <div class="content">
-  <TodoMainComponent/>
+    <TodoMainComponent/>
   </div>
-  <div><p> dfgdfffffffffffffffffffffffffffffffffffg</p></div>
 </template>
 
 <style>
@@ -22,7 +21,7 @@ import TodoMainComponent from '../../components/templates/TodoMainComponent.vue'
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
+  text-align: -webkit-center;
   color: #2c3e50
 }
 </style>

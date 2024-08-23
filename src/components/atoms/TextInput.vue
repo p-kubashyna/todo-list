@@ -8,7 +8,7 @@ const isInvalidInput = ref(false)
 function submitTodo (inputText) {
   this.isInvalidInput = validateInput(this.inputText)
   if (!this.isInvalidInput) {
-    store.commit('setTodo', inputText)
+    store.commit('addTodo', inputText)
     this.inputText = ''
   }
 }
@@ -19,14 +19,15 @@ function validateInput (inputText) {
 </script>
 
 <template>
-<form @submit.prevent="submitTodo(inputText)">
-    <input :class="{ 'input-invalid input-base' : isInvalidInput === true, 'input-base' : isInvalidInput === false}" v-model.trim="inputText" placeholder="Add task..."/>
-</form>
+  <form @submit.prevent="submitTodo(inputText)">
+    <input :class="{ 'input-invalid input-base' : isInvalidInput === true, 'input-base' : isInvalidInput === false}"
+           v-model.trim="inputText" placeholder="Add task..."/>
+  </form>
 </template>
 
 <style scoped>
 .input-base {
-  width: 500px;
+  width: 600px;
   height: 25px;
   border-radius: 7px;
   border-width: 10px;
