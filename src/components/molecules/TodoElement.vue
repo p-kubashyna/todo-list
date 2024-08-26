@@ -1,6 +1,6 @@
 <script setup>
 import CheckboxInput from '@/components/atoms/CheckboxInput.vue'
-import ButtonInput from '@/components/atoms/ButtonInput.vue'
+import DeleteTodoButton from '@/components/atoms/DeleteTodoButton.vue'
 import { useStore } from 'vuex'
 
 const store = useStore()
@@ -24,7 +24,7 @@ function changeTodoState (itemId) {
   <div class="item">
     <CheckboxInput :checked="props.todoItem.isCompleted" @change="changeTodoState(props.todoItem.id)"/>
     <span :class="{ 'completed-task' : props.todoItem.isCompleted === true }">{{ props.todoItem.name }}</span>
-    <ButtonInput class="button-default" label="X" @click="removeTodo(props.todoItem.id)"/>
+    <DeleteTodoButton @click="removeTodo(props.todoItem.id)"/>
   </div>
 </template>
 
@@ -38,12 +38,6 @@ function changeTodoState (itemId) {
   padding: 7px;
   display: flex;
   align-items: center;
-}
-
-.button-default {
-  width: 25px;
-  background-color: white;
-  border-width: 0;
 }
 
 .completed-task {

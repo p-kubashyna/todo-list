@@ -18,9 +18,19 @@ export default createStore({
       id: 3,
       name: '10 minutes meditation',
       isCompleted: false
-    }]
+    }],
+    allTasks: (todoList) => todoList,
+    completedTasks: (todoList) => todoList.filter((todoItem) => todoItem.isCompleted),
+    incompleteTasks: (todoList) => todoList.filter((todoItem) => !todoItem.isCompleted),
+    activeFilter: (todoList) => todoList
   },
   getters: {
+    getTodoList (state) {
+      return state.activeFilter(state.todoList)
+    },
+    getIncompleteTodosCount (state) {
+      return state.todoList.filter((todo) => !todo.isCompleted).length
+    }
   },
   mutations: {
     addTodo (state, newTodo) {
@@ -39,6 +49,12 @@ export default createStore({
       const index = state.todoList.findIndex((item) => item.id === todoId)
       const todoItem = state.todoList[index]
       todoItem.isCompleted = !todoItem.isCompleted
+    },
+    removeAllCompleted (state) {
+      state.todoList = state.todoList.filter((todo) => !todo.isCompleted)
+    },
+    setFilter (state, filter) {
+      state.activeFilter = filter
     }
   },
   actions: {
