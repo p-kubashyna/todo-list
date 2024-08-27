@@ -33,6 +33,7 @@ function validateInput (inputText) {
   border-width: 10px;
   border-color: white;
   border-style: solid;
+  font-family: monospace;
 }
 
 .input-invalid {

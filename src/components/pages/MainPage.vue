@@ -6,22 +6,27 @@ import TodoMainComponent from '../../components/templates/TodoMainComponent.vue'
 <template>
   <BackgroundImage/>
   <div class="content">
+    <span class=header>TODO</span>
     <TodoMainComponent/>
   </div>
 </template>
 
 <style>
+.header {
+  font-family: sans-serif;
+  font-variant: all-small-caps;
+  font-size: 48px;
+  align-self: normal;
+  margin-bottom: 15px;
+  color: #0d1685;
+}
 
 .content {
   position: relative;
-  padding: 200px;
-}
-
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 150px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   text-align: -webkit-center;
-  color: #2c3e50
 }
 </style>

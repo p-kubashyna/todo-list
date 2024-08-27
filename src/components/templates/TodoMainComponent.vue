@@ -1,11 +1,11 @@
 <script setup>
 import TextInput from '@/components/atoms/TextInput.vue'
-import TodoList from '@/components/organisms/TodoList.vue'
+import TodoPanel from '@/components/organisms/TodoPanel.vue'
 </script>
 
 <template>
   <div>
     <TextInput/>
-    <TodoList/>
+    <TodoPanel/>
   </div>
 </template>

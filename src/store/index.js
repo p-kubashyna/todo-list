@@ -2,7 +2,6 @@ import { createStore } from 'vuex'
 
 export default createStore({
   state: {
-    newTodoItem: '',
     idCounter: 4,
     todoList: [{
       id: 1,
@@ -19,9 +18,11 @@ export default createStore({
       name: '10 minutes meditation',
       isCompleted: false
     }],
-    allTasks: (todoList) => todoList,
-    completedTasks: (todoList) => todoList.filter((todoItem) => todoItem.isCompleted),
-    incompleteTasks: (todoList) => todoList.filter((todoItem) => !todoItem.isCompleted),
+    filters: {
+      all: (todoList) => todoList,
+      completed: (todoList) => todoList.filter((todoItem) => todoItem.isCompleted),
+      incomplete: (todoList) => todoList.filter((todoItem) => !todoItem.isCompleted)
+    },
     activeFilter: (todoList) => todoList
   },
   getters: {
@@ -53,8 +54,8 @@ export default createStore({
     removeAllCompleted (state) {
       state.todoList = state.todoList.filter((todo) => !todo.isCompleted)
     },
-    setFilter (state, filter) {
-      state.activeFilter = filter
+    setFilter (state, filterName) {
+      state.activeFilter = state.filters[filterName]
     }
   },
   actions: {

@@ -23,7 +23,7 @@ function changeTodoState (itemId) {
 <template>
   <div class="item">
     <CheckboxInput :checked="props.todoItem.isCompleted" @change="changeTodoState(props.todoItem.id)"/>
-    <span :class="{ 'completed-task' : props.todoItem.isCompleted === true }">{{ props.todoItem.name }}</span>
+    <span :class="{ 'task' : props.todoItem.isCompleted === false, 'task completed-task' : props.todoItem.isCompleted === true }">{{ props.todoItem.name }}</span>
     <DeleteTodoButton @click="removeTodo(props.todoItem.id)"/>
   </div>
 </template>
@@ -38,6 +38,12 @@ function changeTodoState (itemId) {
   padding: 7px;
   display: flex;
   align-items: center;
+}
+
+.task {
+  font-family: monospace;
+  color: #121952;
+  margin-left: 5px;
 }
 
 .completed-task {
