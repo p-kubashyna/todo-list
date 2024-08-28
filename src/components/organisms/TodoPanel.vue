@@ -4,14 +4,14 @@ import TodoBottomPanel from '@/components/molecules/TodoBottomPanel.vue'
 </script>
 
 <template>
-<div class="test">
+<div class="panel">
   <TodoList/>
   <TodoBottomPanel/>
 </div>
 </template>
 
 <style>
-.test {
+.panel {
   margin-top: 30px;
   width: 600px;
   border-radius: 7px;

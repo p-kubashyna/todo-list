@@ -20,7 +20,7 @@ function validateInput (inputText) {
 
 <template>
   <form @submit.prevent="submitTodo(inputText)">
-    <input :class="{ 'input-invalid input-base' : isInvalidInput === true, 'input-base' : isInvalidInput === false}"
+    <input class="input-base" :class="{ 'input-invalid' : isInvalidInput === true }"
            v-model.trim="inputText" placeholder="Add task..."/>
   </form>
 </template>

@@ -23,7 +23,8 @@ export default createStore({
       completed: (todoList) => todoList.filter((todoItem) => todoItem.isCompleted),
       incomplete: (todoList) => todoList.filter((todoItem) => !todoItem.isCompleted)
     },
-    activeFilter: (todoList) => todoList
+    activeFilter: (todoList) => todoList,
+    activeFilterName: 'all'
   },
   getters: {
     getTodoList (state) {
@@ -56,6 +57,7 @@ export default createStore({
     },
     setFilter (state, filterName) {
       state.activeFilter = state.filters[filterName]
+      state.activeFilterName = filterName
     }
   },
   actions: {
