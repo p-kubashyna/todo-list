@@ -1,30 +1,37 @@
 <script setup>
-import CheckboxInput from '@/components/atoms/CheckboxInput.vue'
-import DeleteTodoButton from '@/components/atoms/DeleteTodoButton.vue'
-import { useStore } from 'vuex'
+import CheckboxInput from "@/components/atoms/CheckboxInput.vue";
+import DeleteTodoButton from "@/components/atoms/DeleteTodoButton.vue";
+import { useStore } from "vuex";
 
-const store = useStore()
+const store = useStore();
 const props = defineProps({
   todoItem: {
     type: Object,
-    required: true
-  }
-})
+    required: true,
+  },
+});
 
-function removeTodo (itemId) {
-  store.commit('removeTodo', itemId)
+function removeTodo(itemId) {
+  store.commit("removeTodo", itemId);
 }
 
-function changeTodoState (itemId) {
-  store.commit('changeState', itemId)
+function changeTodoState(itemId) {
+  store.commit("changeState", itemId);
 }
 </script>
 
 <template>
   <div class="item">
-    <CheckboxInput :checked="props.todoItem.isCompleted" @change="changeTodoState(props.todoItem.id)"/>
-    <span class="task" :class="{ 'completed-task' : props.todoItem.isCompleted === true }">{{ props.todoItem.name }}</span>
-    <DeleteTodoButton @click="removeTodo(props.todoItem.id)"/>
+    <CheckboxInput
+      :checked="props.todoItem.isCompleted"
+      @change="changeTodoState(props.todoItem.id)"
+    />
+    <span
+      class="task"
+      :class="{ 'completed-task': props.todoItem.isCompleted === true }"
+      >{{ props.todoItem.name }}</span
+    >
+    <DeleteTodoButton @click="removeTodo(props.todoItem.id)" />
   </div>
 </template>
 

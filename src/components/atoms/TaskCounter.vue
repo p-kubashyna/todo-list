@@ -1,13 +1,13 @@
 <script setup>
-import { useStore } from 'vuex'
-import { computed } from 'vue'
+import { useStore } from "vuex";
+import { computed } from "vue";
 
-const store = useStore()
-const incompleteCounter = computed(() => store.getters.getIncompleteTodosCount)
+const store = useStore();
+const incompleteCounter = computed(() => store.getters.getIncompleteTodosCount);
 </script>
 
 <template>
-<span class="counter-label">{{ incompleteCounter }} tasks left</span>
+  <span class="counter-label">{{ incompleteCounter }} tasks left</span>
 </template>
 
 <style scoped>

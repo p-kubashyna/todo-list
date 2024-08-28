@@ -1,8 +1,13 @@
-<script setup>
-</script>
+<script setup></script>
 
 <template>
-  <button class="button-default"><img class="delete-button-image" src="../../assets/images/trashcan_icon.png" alt="delete icon"></button>
+  <button class="button-default">
+    <img
+      class="delete-button-image"
+      src="../../assets/images/trashcan_icon.png"
+      alt="delete icon"
+    />
+  </button>
 </template>
 
 <style scoped>

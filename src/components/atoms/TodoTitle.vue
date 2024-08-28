@@ -1,5 +1,5 @@
 <template>
-  <span class=header>TODO</span>
+  <span class="header">TODO</span>
 </template>
 
 <style>

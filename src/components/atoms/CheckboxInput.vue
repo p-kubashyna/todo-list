@@ -3,13 +3,13 @@ const props = defineProps({
   checked: {
     type: Boolean,
     required: true,
-    default: false
-  }
-})
+    default: false,
+  },
+});
 </script>
 
 <template>
-  <input type="checkbox" class="checkbox-round" :checked="props.checked"/>
+  <input type="checkbox" class="checkbox-round" :checked="props.checked" />
 </template>
 
 <style>

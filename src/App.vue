@@ -1,7 +1,7 @@
 <script setup>
-import MainPage from './components/pages/MainPage.vue'
+import MainPage from "./components/pages/MainPage.vue";
 </script>
 
 <template>
-  <MainPage/>
+  <MainPage />
 </template>

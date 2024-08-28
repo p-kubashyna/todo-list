@@ -1,15 +1,19 @@
 <script setup>
-import { useStore } from 'vuex'
-import { computed } from 'vue'
+import { useStore } from "vuex";
+import { computed } from "vue";
 
-const store = useStore()
+const store = useStore();
 
-const hasCompleted = computed(() => store.getters.getCompletedTodosCount > 0)
+const hasCompleted = computed(() => store.getters.getCompletedTodosCount > 0);
 </script>
 
 <template>
-  <button :disabled="!hasCompleted" class="clear-completed-button" :class="{ 'active-button' : hasCompleted }">Delete
-    completed
+  <button
+    :disabled="!hasCompleted"
+    class="clear-completed-button"
+    :class="{ 'active-button': hasCompleted }"
+  >
+    Delete completed
   </button>
 </template>
 

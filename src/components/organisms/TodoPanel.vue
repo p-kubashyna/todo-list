@@ -1,13 +1,13 @@
 <script setup>
-import TodoList from '@/components/organisms/TodoList.vue'
-import TodoBottomPanel from '@/components/molecules/TodoBottomPanel.vue'
+import TodoList from "@/components/organisms/TodoList.vue";
+import TodoBottomPanel from "@/components/molecules/TodoBottomPanel.vue";
 </script>
 
 <template>
-<div class="panel">
-  <TodoList/>
-  <TodoBottomPanel/>
-</div>
+  <div class="panel">
+    <TodoList />
+    <TodoBottomPanel />
+  </div>
 </template>
 
 <style>
@@ -18,6 +18,6 @@ import TodoBottomPanel from '@/components/molecules/TodoBottomPanel.vue'
   border-width: 5px;
   border-color: white;
   border-style: solid;
-  box-shadow: -15px 15px 30px 1px rgba(0, 0, 0, .25);
+  box-shadow: -15px 15px 30px 1px rgba(0, 0, 0, 0.25);
 }
 </style>

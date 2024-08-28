@@ -8,7 +8,7 @@
 }
 
 .background:before {
-  content: ' ';
+  content: " ";
   display: block;
   position: absolute;
   left: 0;
