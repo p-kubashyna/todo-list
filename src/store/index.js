@@ -32,6 +32,9 @@ export default createStore({
     },
     getIncompleteTodosCount (state) {
       return state.todoList.filter((todo) => !todo.isCompleted).length
+    },
+    getCompletedTodosCount (state) {
+      return state.todoList.filter((todo) => todo.isCompleted).length
     }
   },
   mutations: {
