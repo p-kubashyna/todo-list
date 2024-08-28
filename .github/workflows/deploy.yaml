@@ -1,7 +1,6 @@
 on:
   push:
     branches:
-      - 'master'
       - 'task-1/input-field'
 
 permissions:
