@@ -1,7 +1,7 @@
 on:
   push:
     branches:
-      - 'task-1/input-field'
+      - 'master'
 
 permissions:
   contents: read
