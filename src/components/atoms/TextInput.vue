@@ -1,30 +1,34 @@
 <script setup>
 import { ref } from "vue";
-import store from "@/store";
 
 const inputText = ref("");
-const isInvalidInput = ref(false);
+const emit = defineEmits(["submitForm"]);
+const props = defineProps({
+  placeholder: {
+    type: String,
+    required: true,
+    default: "",
+  },
+  isInvalidInput: {
+    type: Boolean,
+    required: true,
+    default: false,
+  },
+});
 
-function submitTodo(inputText) {
-  this.isInvalidInput = validateInput(this.inputText);
-  if (!this.isInvalidInput) {
-    store.commit("addTodo", inputText);
-    this.inputText = "";
-  }
-}
-
-function validateInput(inputText) {
-  return !inputText || /^\s*$/.test(inputText) || inputText.length > 150;
+function submitEvent() {
+  emit("submitForm", this.inputText);
+  this.inputText = "";
 }
 </script>
 
 <template>
-  <form @submit.prevent="submitTodo(inputText)">
+  <form @submit.prevent="submitEvent()">
     <input
       class="input-base"
-      :class="{ 'input-invalid': isInvalidInput === true }"
+      :class="{ 'input-invalid': props.isInvalidInput }"
       v-model.trim="inputText"
-      placeholder="Add task..."
+      :placeholder="props.placeholder"
     />
   </form>
 </template>

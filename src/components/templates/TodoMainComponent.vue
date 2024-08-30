@@ -4,6 +4,21 @@ import TextInput from "@/components/atoms/TextInput.vue";
 import TodoPanel from "@/components/organisms/TodoPanel.vue";
 import TodoTitle from "@/components/atoms/TodoTitle.vue";
 import BackgroundImage from "@/components/atoms/BackgroundImage.vue";
+import { ref } from "vue";
+import store from "@/store";
+
+let isInvalidInput = ref(false);
+
+function submitTodo(inputText) {
+  this.isInvalidInput = validateInput(inputText);
+  if (!this.isInvalidInput) {
+    store.commit("addTodo", inputText);
+  }
+}
+
+function validateInput(inputText) {
+  return !inputText || /^\s*$/.test(inputText) || inputText.length > 150;
+}
 </script>
 
 <template>
@@ -11,7 +26,7 @@ import BackgroundImage from "@/components/atoms/BackgroundImage.vue";
   <div class="content">
     <TodoTitle />
     <div>
-      <TextInput />
+      <TextInput @submitForm="(inputText) => submitTodo(inputText)" :is-invalid-input=isInvalidInput placeholder="Add task..."/>
       <TodoPanel />
     </div>
   </div>

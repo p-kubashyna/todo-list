@@ -28,7 +28,7 @@ function changeTodoState(itemId) {
     />
     <span
       class="task"
-      :class="{ 'completed-task': props.todoItem.isCompleted === true }"
+      :class="{ 'completed-task': props.todoItem.isCompleted }"
       >{{ props.todoItem.name }}</span
     >
     <DeleteTodoButton @click="removeTodo(props.todoItem.id)" />

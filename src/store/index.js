@@ -1,21 +1,21 @@
 import { createStore } from "vuex";
+import { v4 as uuidv4 } from "uuid";
 
 export default createStore({
   state: {
-    idCounter: 4,
     todoList: [
       {
-        id: 1,
+        id: uuidv4(),
         name: "Read for 1 hour",
         isCompleted: false,
       },
       {
-        id: 2,
+        id: uuidv4(),
         name: "Pick up groceries",
         isCompleted: false,
       },
       {
-        id: 3,
+        id: uuidv4(),
         name: "10 minutes meditation",
         isCompleted: false,
       },
@@ -44,11 +44,10 @@ export default createStore({
   mutations: {
     addTodo(state, newTodo) {
       state.todoList.push({
-        id: state.idCounter,
+        id: uuidv4(),
         name: newTodo,
         isCompleted: false,
       });
-      state.idCounter++;
     },
     removeTodo(state, todoId) {
       const index = state.todoList.findIndex((item) => item.id === todoId);

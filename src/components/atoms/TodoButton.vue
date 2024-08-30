@@ -1,19 +1,18 @@
 <script setup>
-import { useStore } from "vuex";
-import { computed } from "vue";
-
-const store = useStore();
-
-const activeFilterName = computed(() => store.state.activeFilterName);
 const props = defineProps({
   label: {
     type: String,
     required: true,
     default: "",
   },
-  filterName: {
+  isDisabled: {
+    type: Boolean,
+    required: false,
+    default: false,
+  },
+  additionalClass: {
     type: String,
-    required: true,
+    required: false,
     default: "",
   },
 });
@@ -21,26 +20,26 @@ const props = defineProps({
 
 <template>
   <button
-    class="filter-button"
-    :class="{ 'active-filter': activeFilterName === filterName }"
+    class="default-button"
+    :disabled="props.isDisabled"
+    :class="{
+      [props.additionalClass]: props.additionalClass !== '',
+      'active-button': !props.isDisabled,
+    }"
   >
     {{ props.label }}
   </button>
 </template>
 
 <style>
-.filter-button {
+.default-button {
   background: white;
   margin-left: 5px;
   font-family: monospace;
   border-style: none;
 }
 
-.filter-button:hover {
-  text-decoration: underline;
-}
-
-.active-filter {
+.active-button:hover {
   text-decoration: underline;
 }
 </style>
