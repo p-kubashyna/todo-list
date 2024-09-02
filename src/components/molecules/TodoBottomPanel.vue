@@ -3,11 +3,7 @@ import TaskCounter from "@/components/atoms/TaskCounter.vue";
 import TodoButton from "@/components/atoms/TodoButton.vue";
 import { useStore } from "vuex";
 import { computed } from "vue";
-import {
-  FILTER_ALL,
-  FILTER_COMPLETED,
-  FILTER_INCOMPLETE,
-} from "@/constants/constants";
+import { FILTERS } from "@/constants/constants";
 
 const store = useStore();
 const activeFilterName = computed(() => store.state.activeFilterName);
@@ -30,19 +26,19 @@ function setActiveFilterClass(filterName) {
   <div class="bottom-panel">
     <TaskCounter />
     <TodoButton
-      @click="setFilter(FILTER_INCOMPLETE)"
+      @click="setFilter(FILTERS.INCOMPLETE)"
       label="Show incomplete"
-      :additional-class="setActiveFilterClass(FILTER_INCOMPLETE)"
+      :additional-class="setActiveFilterClass(FILTERS.INCOMPLETE)"
     />
     <TodoButton
-      @click="setFilter(FILTER_COMPLETED)"
+      @click="setFilter(FILTERS.COMPLETED)"
       label="Show completed"
-      :additional-class="setActiveFilterClass(FILTER_COMPLETED)"
+      :additional-class="setActiveFilterClass(FILTERS.COMPLETED)"
     />
     <TodoButton
-      @click="setFilter(FILTER_ALL)"
+      @click="setFilter(FILTERS.ALL)"
       label="Show all"
-      :additional-class="setActiveFilterClass(FILTER_ALL)"
+      :additional-class="setActiveFilterClass(FILTERS.ALL)"
     />
     <TodoButton
       @click="deleteCompletedTasks"

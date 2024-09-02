@@ -1,5 +1,6 @@
 import { createStore } from "vuex";
 import { v4 as uuidv4 } from "uuid";
+import { FILTERS } from "@/constants/constants";
 
 export default createStore({
   state: {
@@ -28,7 +29,7 @@ export default createStore({
         todoList.filter((todoItem) => !todoItem.isCompleted),
     },
     activeFilter: (todoList) => todoList,
-    activeFilterName: "all",
+    activeFilterName: FILTERS.ALL,
   },
   getters: {
     getTodoList(state) {
