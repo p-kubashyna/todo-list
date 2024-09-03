@@ -7,11 +7,11 @@ import BackgroundImage from "@/components/atoms/BackgroundImage.vue";
 import { ref } from "vue";
 import store from "@/store";
 
-let isInvalidInput = ref(false);
+const isInvalidInput = ref(false);
 
 function submitTodo(inputText) {
-  this.isInvalidInput = validateInput(inputText);
-  if (!this.isInvalidInput) {
+  isInvalidInput.value = validateInput(inputText);
+  if (!isInvalidInput.value) {
     store.commit("addTodo", inputText);
   }
 }
