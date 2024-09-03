@@ -17,8 +17,8 @@ const props = defineProps({
 });
 
 function submitEvent() {
-  emit("submitForm", this.inputText);
-  this.inputText = "";
+  emit("submitForm", inputText.value);
+  inputText.value = "";
 }
 </script>
 
