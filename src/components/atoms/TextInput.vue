@@ -1,38 +1,52 @@
 <script setup>
-import { ref } from 'vue'
-import store from '@/store'
+import { ref } from "vue";
 
-const inputText = ref('')
-const isInvalidInput = ref(false)
+const inputText = ref("");
+const emit = defineEmits(["submitForm"]);
+const props = defineProps({
+  placeholder: {
+    type: String,
+    required: true,
+    default: "",
+  },
+  isInvalidInput: {
+    type: Boolean,
+    required: true,
+    default: false,
+  },
+});
 
-function submitTodo (inputText) {
-  this.isInvalidInput = validateInput(this.inputText)
-  if (!this.isInvalidInput) {
-    store.commit('setTodo', inputText)
-    this.inputText = ''
-  }
-}
-
-function validateInput (inputText) {
-  return (!inputText || /^\s*$/.test(inputText) || inputText.length > 150)
+function submitEvent() {
+  emit("submitForm", this.inputText);
+  this.inputText = "";
 }
 </script>
 
 <template>
-<form @submit.prevent="submitTodo(inputText)">
-    <input :class="{ 'input-invalid input-base' : isInvalidInput === true, 'input-base' : isInvalidInput === false}" v-model.trim="inputText" placeholder="Add task..."/>
-</form>
+  <form @submit.prevent="submitEvent()">
+    <input
+      class="input-base"
+      :class="{ 'input-invalid': props.isInvalidInput }"
+      v-model.trim="inputText"
+      :placeholder="props.placeholder"
+    />
+  </form>
 </template>
 
 <style scoped>
 .input-base {
-  width: 300px;
-  height: 30px;
+  width: 600px;
+  height: 25px;
   border-radius: 7px;
+  border-width: 10px;
+  border-color: white;
+  border-style: solid;
+  font-family: monospace;
 }
 
 .input-invalid {
-  background: white url(../../assets/images/invalid_input_icon.png) no-repeat right;
+  background: white url(../../assets/images/invalid_input_icon.png) no-repeat
+    right;
   background-size: auto 100%;
 }
 </style>
