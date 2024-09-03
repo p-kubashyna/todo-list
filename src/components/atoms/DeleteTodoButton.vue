@@ -1,7 +1,7 @@
 <script setup></script>
 
 <template>
-  <button class="button-default">
+  <button class="delete-button">
     <img
       class="delete-button-image"
       src="../../assets/images/trashcan_icon.png"
@@ -11,7 +11,7 @@
 </template>
 
 <style scoped>
-.button-default {
+.delete-button {
   width: 25px;
   background-color: white;
   border-width: 0;

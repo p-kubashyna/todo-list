@@ -22,4 +22,13 @@ module.exports = {
     "eslint:recommended",
     "plugin:prettier/recommended",
   ],
+
+  overrides: [
+    {
+      files: ["**/*.spec.js", "**/*.spec.jsx"],
+      env: {
+        jest: true,
+      },
+    },
+  ],
 };

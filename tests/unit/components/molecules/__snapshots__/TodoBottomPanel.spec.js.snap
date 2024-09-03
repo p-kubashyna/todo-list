@@ -1,0 +1,99 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Given the TodoBottomPanel component should render 1`] = `
+<div
+  class="bottom-panel"
+>
+  <span
+    class="counter-label"
+  >
+    undefined tasks left
+  </span>
+  <button
+    class="default-button active-button"
+  >
+    Show incomplete
+  </button>
+  <button
+    class="default-button active-button"
+  >
+    Show completed
+  </button>
+  <button
+    class="default-button active-filter active-button"
+  >
+    Show all
+  </button>
+  <button
+    class="default-button active-button"
+  >
+    Delete completed
+  </button>
+</div>
+`;
+
+exports[`Given the TodoBottomPanel component should render 2`] = `
+<div
+  class="bottom-panel"
+>
+  <span
+    class="counter-label"
+  >
+    undefined tasks left
+  </span>
+  <button
+    class="default-button active-button"
+  >
+    Show incomplete
+  </button>
+  <button
+    class="default-button active-filter active-button"
+  >
+    Show completed
+  </button>
+  <button
+    class="default-button active-button"
+  >
+    Show all
+  </button>
+  <button
+    class="default-button"
+    disabled=""
+  >
+    Delete completed
+  </button>
+</div>
+`;
+
+exports[`Given the TodoBottomPanel component should render 3`] = `
+<div
+  class="bottom-panel"
+>
+  <span
+    class="counter-label"
+  >
+    undefined tasks left
+  </span>
+  <button
+    class="default-button active-filter active-button"
+  >
+    Show incomplete
+  </button>
+  <button
+    class="default-button active-button"
+  >
+    Show completed
+  </button>
+  <button
+    class="default-button active-button"
+  >
+    Show all
+  </button>
+  <button
+    class="default-button"
+    disabled=""
+  >
+    Delete completed
+  </button>
+</div>
+`;

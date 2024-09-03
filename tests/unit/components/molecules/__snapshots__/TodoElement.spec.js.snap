@@ -1,0 +1,52 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Given the TodoElement component should render 1`] = `
+<div
+  class="item"
+>
+  <input
+    class="checkbox-round"
+    type="checkbox"
+  />
+  <span
+    class="task"
+  >
+    todo
+  </span>
+  <button
+    class="delete-button"
+  >
+    <img
+      alt="delete icon"
+      class="delete-button-image"
+      src=""
+    />
+  </button>
+</div>
+`;
+
+exports[`Given the TodoElement component should render 2`] = `
+<div
+  class="item"
+>
+  <input
+    checked=""
+    class="checkbox-round"
+    type="checkbox"
+  />
+  <span
+    class="task completed-task"
+  >
+    todo
+  </span>
+  <button
+    class="delete-button"
+  >
+    <img
+      alt="delete icon"
+      class="delete-button-image"
+      src=""
+    />
+  </button>
+</div>
+`;

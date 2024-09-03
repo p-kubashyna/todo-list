@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Given the DeleteTodoButton component should render 1`] = `
+<button
+  class="delete-button"
+>
+  <img
+    alt="delete icon"
+    class="delete-button-image"
+    src=""
+  />
+</button>
+`;
