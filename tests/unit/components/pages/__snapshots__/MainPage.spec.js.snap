@@ -1,0 +1,3 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Given the MainPage component should render 1`] = `<todo-main-component-stub />`;
