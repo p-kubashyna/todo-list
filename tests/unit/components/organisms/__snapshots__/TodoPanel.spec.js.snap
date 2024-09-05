@@ -1,0 +1,10 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Given the TodoPanel component should render 1`] = `
+<div
+  class="panel"
+>
+  <todo-list-stub />
+  <todo-bottom-panel-stub />
+</div>
+`;

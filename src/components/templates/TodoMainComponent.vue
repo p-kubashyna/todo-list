@@ -5,8 +5,9 @@ import TodoPanel from "@/components/organisms/TodoPanel.vue";
 import TodoTitle from "@/components/atoms/TodoTitle.vue";
 import BackgroundImage from "@/components/atoms/BackgroundImage.vue";
 import { ref } from "vue";
-import store from "@/store";
+import { useStore } from "vuex";
 
+const store = useStore();
 const isInvalidInput = ref(false);
 
 function submitTodo(inputText) {

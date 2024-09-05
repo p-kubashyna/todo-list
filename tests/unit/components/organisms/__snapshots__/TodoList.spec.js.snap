@@ -1,0 +1,55 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Given the TodoList component should render 1`] = `
+<div>
+  <div>
+    <div
+      class="item"
+      data-draggable="true"
+    >
+      <input
+        class="checkbox-round"
+        type="checkbox"
+      />
+      <span
+        class="task"
+      >
+        todo-1
+      </span>
+      <button
+        class="delete-button"
+      >
+        <img
+          alt="delete icon"
+          class="delete-button-image"
+          src=""
+        />
+      </button>
+    </div>
+    <div
+      class="item"
+      data-draggable="true"
+    >
+      <input
+        checked=""
+        class="checkbox-round"
+        type="checkbox"
+      />
+      <span
+        class="task completed-task"
+      >
+        todo-2
+      </span>
+      <button
+        class="delete-button"
+      >
+        <img
+          alt="delete icon"
+          class="delete-button-image"
+          src=""
+        />
+      </button>
+    </div>
+  </div>
+</div>
+`;

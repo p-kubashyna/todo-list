@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Given the TodoMainComponent component should render 1`] = `
+<div
+  data-v-app=""
+>
+  
+  <background-image-stub />
+  <div
+    class="content"
+  >
+    <todo-title-stub />
+    <div>
+      <text-input-stub
+        isinvalidinput="false"
+        placeholder="Add task..."
+      />
+      <todo-panel-stub />
+    </div>
+  </div>
+  
+</div>
+`;

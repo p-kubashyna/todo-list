@@ -1,0 +1,16 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Given the CheckboxInput component should render 1`] = `
+<input
+  checked=""
+  class="checkbox-round"
+  type="checkbox"
+/>
+`;
+
+exports[`Given the CheckboxInput component should render 2`] = `
+<input
+  class="checkbox-round"
+  type="checkbox"
+/>
+`;

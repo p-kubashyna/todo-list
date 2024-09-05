@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Given the TextInput component should render 1`] = `
+<form>
+  <input
+    class="input-base input-invalid"
+    placeholder="placeholder1"
+  />
+</form>
+`;
+
+exports[`Given the TextInput component should render 2`] = `
+<form>
+  <input
+    class="input-base"
+    placeholder="placeholder2"
+  />
+</form>
+`;
